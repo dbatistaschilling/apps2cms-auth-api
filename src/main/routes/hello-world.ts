@@ -1,7 +1,7 @@
-import { adaptRoute } from '../../infra/express/express-route-adapter'
+import { adaptRoute } from '@wymaze/apps2cms-common'
 import { Router } from 'express'
-// import { makeLoginFactory } from './../factories/auth/LoginFactory'
+import { makeSignUpFactory } from '../factories/_controllers/signup-factory'
 
 export default (router: Router): void => {
-  router.post('/hello', adaptRoute(makeLoginFactory()))
+  router.post('/signup', adaptRoute(makeSignUpFactory()))
 }
