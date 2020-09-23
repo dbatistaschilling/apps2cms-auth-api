@@ -1,6 +1,10 @@
 import { body } from 'express-validator'
 
 export const signupValidation = [
+  body('name')
+    .trim()
+    .notEmpty()
+    .withMessage('You must supply a name'),
   body('email')
     .isEmail()
     .withMessage('Email must be valid'),

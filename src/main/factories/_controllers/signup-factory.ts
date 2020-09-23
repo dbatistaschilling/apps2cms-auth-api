@@ -1,8 +1,7 @@
-
 import { IController, Encripter, FindOneAdapter, SaveAdapter } from '@wymaze/apps2cms-common'
 // import { ValidatorAdapter } from '../../../infra/validations/validator-adapter'
-import { SignUp } from '@/data/SignUp'
-import { SignUpCtrl } from '@/presentation/SignUpCtrl'
+import { SignUp } from '../../../data/SignUp'
+import { SignUpCtrl } from '../../../presentation/SignUpCtrl'
 // import { EncrypterAdapter } from '../../../infra/encryption/encrypter-adapter'
 // import { FindOneAdapter, SaveAdapter } from '@/infra/mongodb/mongorepository'
 
