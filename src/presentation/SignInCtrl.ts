@@ -2,21 +2,20 @@ import {
   IController,
   IHttpRequest,
   IHttpResponse,
-  newDataRes,
   ServerError,
-  IToken
+  IToken, successRes
 } from '@wymaze/apps2cms-common'
-import { ISignUp } from '@/domain'
+import { ISignIn } from '@/domain'
 
-export class SignUpCtrl implements IController {
+export class SignInCtrl implements IController {
   constructor (
-    private readonly signup: ISignUp,
+    private readonly signin: ISignIn,
     private readonly jwt: IToken
   ) {}
 
   async handle (httpRequest: IHttpRequest): Promise<IHttpResponse> {
     try {
-      const signUpResult = await this.signup.execute(httpRequest.body)
+      const signUpResult = await this.signin.execute(httpRequest.body)
       if (signUpResult.error) {
         return signUpResult.body
       }
@@ -26,7 +25,7 @@ export class SignUpCtrl implements IController {
 
       const jwt = this.jwt.sign({ id, email, secretKey })
 
-      return newDataRes({ message: 'SignUp with success', user: signUpResult.body, jwt })
+      return successRes({ message: 'SignIn with success', user: signUpResult.body, jwt })
     } catch (error) {
       throw new ServerError(error.stack)
     }

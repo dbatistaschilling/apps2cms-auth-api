@@ -4,7 +4,11 @@ if (!process.env.JWT_KEY) {
   throw new Error('JWT_KEY must be defined')
 }
 
-mongoDbConnection.connect('mongodb://apps2cms-auth-mongo-srv:27017/auth')
+if (!process.env.MONGO_URI) {
+  throw new Error('MONGO_URI must be defined')
+}
+
+mongoDbConnection.connect(process.env.MONGO_URI)
   .then(async () => {
     const app = (await import('./config/app')).default
     app.listen(4000, () => console.log(`server running on port ${4000}`))
