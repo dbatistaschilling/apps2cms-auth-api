@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@wymaze/apps2cms-common": "^1.0.42",
+    "@wymaze/apps2cms-common": "^1.0.43",
     "cookie-session": "^1.4.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
