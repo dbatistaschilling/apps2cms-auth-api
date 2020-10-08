@@ -1,0 +1,23 @@
+{
+	"SUCCESSFULLY_GET": "Recupero dettaglio avvenuto con successo.",
+	"SUCCESSFULLY_READ": "Lista oggetti recuperata con successo.",
+	"SUCCESSFULLY_CREATED": "Oggetto creato con successo.",
+	"SUCCESSFULLY_UPDATED": "Oggetto modificato con successo.",
+	"SUCCESSFULLY_DELETED": "Oggetto eliminato con successo.",
+	"SUCCESSFULLY_VERIFIED": "Oggetto verificato con successo.",
+	"SUCCESSFULLY_RESET": "Utente aggiornato con successo.",
+    "SUCCESSFULLY_ACTIVATED": "Utente attivato con successo.",
+    "CUSTOMER_NOT_FOUND": "Cliente non trovato.",
+    "SDK_NOT_FOUND": "SDK non trovato.",
+	"LICENSE_NOT_FOUND": "Licenza non trovata",
+	"USER_NOT_FOUND": "Utente non trovato.",
+	"AUTHENTICATION_FAILED": "Credenziali inserite non valide, verificare le credenziali e riprovare.",
+	"UNAUTHORIZED_RESURCE": "Non si dispone delle autorizzazioni necessarie per procedere.",
+	"SUCCESSFULLY_LOGIN":"Login effettuato con successo.",
+	"SUCCESSFULLY_LOGOUT":"Logout effettuato con successo.",
+	"LICENSE_EXPIRED": "Licenza scaduta.",
+	"LICENSE_NOT_ACTIVE": "Licenza non attiva.",
+	"VERSION_MISMATCH": "Mancata corrispondenza con la versione.",
+	"OS_MISMATCH": "Mancata corrispondenza con il sistema operativo.",
+	"GENERIC_ERROR": "Errore generico."
+}

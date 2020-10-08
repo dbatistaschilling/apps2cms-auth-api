@@ -4,18 +4,31 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --rs --notify false src/main/server.ts",
+    "dev": "ts-node-dev --trace-deprecation --rs --notify false src/main/server.ts",
     "build": "del-cli ./build/* && tsc",
     "start": "npm run build && node dist/main/server.js",
-    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
+    "test": "jest",
+    "test:watch": "jest --watchAll --no-cache --passWithNoTests --silent --noStackTrace --runInBand --detectOpenHandles",
     "test:staged": "npm test -- --findRelatedTests",
     "test:ci": "npm test -- --coverage"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "./src/main/test/setup.ts"
+    ]
+  },
+  "config": {
+    "mongodbMemoryServer": {
+      "version": "4.2.8"
+    }
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@wymaze/apps2cms-common": "^1.0.43",
+    "@wymaze/apps2cms-common": "^1.0.66",
     "cookie-session": "^1.4.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
@@ -25,7 +38,12 @@
   "devDependencies": {
     "@types/cookie-session": "^2.0.41",
     "@types/express": "^4.17.8",
+    "@types/jasmine": "^3.5.14",
+    "@types/jest": "^26.0.14",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/mongoose": "^5.7.36",
     "@types/node": "^14.11.1",
+    "@types/supertest": "^2.0.10",
     "@typescript-eslint/eslint-plugin": "^3.10.1",
     "del-cli": "^3.0.1",
     "eslint": "^7.9.0",
@@ -35,8 +53,14 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.3.0",
+    "jasmine": "^3.6.1",
+    "jest": "^26.5.2",
+    "jsonwebtoken": "^8.5.1",
     "lint-staged": "^10.4.0",
-    "ts-node-dev": "^1.0.0-pre.62",
+    "mongodb-memory-server": "^6.9.1",
+    "supertest": "^5.0.0",
+    "ts-jest": "^26.4.1",
+    "ts-node-dev": "^1.0.0-pre.63",
     "typescript": "^4.0.2"
   },
   "_moduleAliases": {

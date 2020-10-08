@@ -1,7 +1,6 @@
 import { ISignIn, ISignInInput, ISignInOutput } from '@/domain'
 import {
   IFindOne,
-  NotFoundError,
   IEncripter,
   BadRequestError
 } from '@wymaze/apps2cms-common'
@@ -18,7 +17,7 @@ export class SignIn implements ISignIn {
     if (!user) {
       return {
         error: true,
-        body: new NotFoundError()
+        body: new BadRequestError('Invalid Credentials')
       }
     }
     const hashedPassword = await this.encripter.compare({
