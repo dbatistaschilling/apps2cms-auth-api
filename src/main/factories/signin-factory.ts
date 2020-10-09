@@ -1,6 +1,6 @@
 import { IController, Encripter, FindOneAdapter, JwtAdapter } from '@wymaze/apps2cms-common'
-import { SignIn } from '../../../data'
-import { SignInCtrl } from '../../../presentation'
+import { SignIn } from '../../data'
+import { SignInCtrl } from '../../presentation'
 
 export const makeSignInFactory = (): IController => {
   const findOneAdapter = new FindOneAdapter()
